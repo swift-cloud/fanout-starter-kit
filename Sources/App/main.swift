@@ -31,7 +31,9 @@ router.post("/stream") { req, res in
             FanoutMessage.subscribe(to: "test")
         )
     } else {
-        try await res.status(200).send("")
+        try await res.status(200).send(
+            FanoutMessage(.text, content: "ack")
+        )
     }
 }
 
