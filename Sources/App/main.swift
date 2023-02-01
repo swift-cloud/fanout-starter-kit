@@ -28,14 +28,9 @@ router.post("/stream") { req, res in
     console.log("grip-sig:", req.headers[.gripSig] ?? "null")
 
     if body.starts(with: "OPEN") {
-        try await res.status(200).send(
-            FanoutMessage.open,
-            FanoutMessage.subscribe(to: "test")
-        )
+        try await res.status(200).send(.open, .subscribe(to: "test"))
     } else {
-        try await res.status(200).send(
-            FanoutMessage(.text, content: "ack")
-        )
+        try await res.status(200).send(.open)
     }
 }
 
