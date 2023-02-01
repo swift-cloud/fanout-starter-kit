@@ -30,7 +30,7 @@ router.post("/stream") { req, res in
     if body.starts(with: "OPEN") {
         try await res.status(200).send(.open, .subscribe(to: "test"))
     } else {
-        try await res.status(200).send(FanoutMessage(.text))
+        try await res.status(200).send(.ack)
     }
 }
 
