@@ -14,17 +14,19 @@ router.post("/stream") { req, res in
         return try await res.status(400).send("Invalid fanout request")
     }
 
+    try req.unsafe_verifyFanoutRequest()
+
     let message = try await req.fanoutMessage()
 
-    console.log("message:", message.event.rawValue, message.content)
+    console.log("event:", message.event.rawValue, "content:", message.content)
 
     console.log("grip-sig:", req.headers[.gripSig] ?? "null")
 
     if message.event == .open {
-        try await res.status(200).send(.open, .subscribe(to: "test"))
-    } else {
-        try await res.status(200).send(.ack)
+        return try await res.status(200).send(.open, .subscribe(to: "test"))
     }
+
+    try await res.status(200).send(.ack)
 }
 
 try await router.listen()
