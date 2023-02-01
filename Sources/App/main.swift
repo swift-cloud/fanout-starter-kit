@@ -14,6 +14,9 @@ router.get("/stream") { req, res in
 }
 
 router.post("/stream") { req, res in
+    guard req.isFanoutRequest() else {
+        return try await res.status(400).send("Invalid fanout request")
+    }
     try await res.status(200).send(
         FanoutMessage.open,
         FanoutMessage.subscribe(to: "test")
