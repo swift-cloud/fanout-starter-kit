@@ -6,7 +6,7 @@ router.get("/stream") { req, res in
     guard req.isUpgradeWebsocketRequest() else {
         return try await res.status(400).send("Invalid websocket request")
     }
-    try req.upgradeWebsocket(backend: "localhost", behavior: .fanout)
+    try req.upgradeWebsocket(to: .fanout)
 }
 
 router.post("/stream") { req, res in
