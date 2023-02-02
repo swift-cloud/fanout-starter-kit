@@ -31,4 +31,12 @@ router.post("/stream") { req, res in
     try await res.send(fanout: .ack)
 }
 
+router.post("/message") { req, res in
+    let token = try ConfigStore(name: "env")["fanout_token"]!
+    let client = FanoutClient(token: token)
+    let content = try await req.body.text()
+    let data = try await client.publish(content, to: "test")
+    try await res.proxy(data)
+}
+
 try await router.listen()
