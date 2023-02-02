@@ -23,8 +23,10 @@ router.post("/stream") { req, res in
     console.log("grip-sig:", req.headers[.gripSig] ?? "null")
 
     if message.event == .open {
-        return try await res.send(fanout: .open, .subscribe(to: "test"))
+        return try await res.meta("user", UUID().uuidString).send(fanout: .open, .subscribe(to: "test"))
     }
+
+    console.log("meta-user:", req.meta("user") ?? "(null)")
 
     try await res.send(fanout: .ack)
 }
