@@ -6,7 +6,7 @@
       "location" : "https://github.com/swift-cloud/Compute",
       "state" : {
         "branch" : "ab/fanout",
-        "revision" : "b99fbcb91c0113e3f66d8bbcd5818c02523778af"
+        "revision" : "d97d718497b91770fb1460f0d67b9e823633c5ce"
       }
     },
     {
@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/swift-cloud/Crypto",
       "state" : {
-        "revision" : "defff250bbd79d81fb8ee53926360fc522d75bad",
-        "version" : "1.6.0"
+        "branch" : "ab/ecdsa",
+        "revision" : "d010a5df32e8e29127df790085a2b4bbcc648b60"
       }
     }
   ],
