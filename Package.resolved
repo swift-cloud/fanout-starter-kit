@@ -6,7 +6,7 @@
       "location" : "https://github.com/swift-cloud/Compute",
       "state" : {
         "branch" : "ab/fanout",
-        "revision" : "1188ecafd2321579c7405fe9def1e9c4e9caad14"
+        "revision" : "759916dede63fd1539a57a2914872ea48ba8dcb1"
       }
     },
     {
@@ -15,7 +15,7 @@
       "location" : "https://github.com/swift-cloud/Crypto",
       "state" : {
         "branch" : "ab/ecdsa",
-        "revision" : "f0416b12b528e9cb46bb9e1a811b9fe0b578eccc"
+        "revision" : "edbbfdd6c711ba69297627bae4a9e82ce9539bdc"
       }
     }
   ],
