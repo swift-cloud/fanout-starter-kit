@@ -14,8 +14,6 @@ router.post("/stream") { req, res in
         return try await res.status(400).send("Invalid fanout request")
     }
 
-    try req.verifyFanoutRequest()
-
     let message = try await req.fanoutMessage()
 
     console.log("event:", message.event.rawValue, "content:", message.content)
