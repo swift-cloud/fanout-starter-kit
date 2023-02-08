@@ -8,7 +8,7 @@ let package = Package(
         .macOS(.v12)
     ],
     dependencies: [
-        .package(url: "https://github.com/swift-cloud/Compute", branch: "ab/fanout")
+        .package(url: "https://github.com/swift-cloud/Compute", from: "2.12.0")
     ],
     targets: [
         .executableTarget(name: "App", dependencies: ["Compute"])
