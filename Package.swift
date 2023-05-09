@@ -1,4 +1,4 @@
-// swift-tools-version: 5.7
+// swift-tools-version: 5.8
 
 import PackageDescription
 
@@ -8,7 +8,7 @@ let package = Package(
         .macOS(.v12)
     ],
     dependencies: [
-        .package(url: "https://github.com/swift-cloud/Compute", from: "2.16.0")
+        .package(url: "https://github.com/swift-cloud/Compute", from: "2.17.0")
     ],
     targets: [
         .executableTarget(name: "App", dependencies: ["Compute"])
